@@ -1,0 +1,20 @@
+{
+  "name": "stressor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "one": "CLIMEM=8999 node -r climem stressor wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000",
+    "two": "CLIMEM=8999 node -r climem stressor wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000 wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000",
+    "all": "CLIMEM=8999 node -r climem stressor wikipedia/*",
+    "climem": "climem 8999",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "climem": "^1.0.0",
+    "pump": "^1.0.1",
+    "saxophonist": "^1.0.0"
+  }
+}
