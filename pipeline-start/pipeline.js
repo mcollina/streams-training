@@ -1,6 +1,7 @@
 'use strict'
 
 const fs = require('fs')
+const util = require('util')
 const stream = require('stream')
 const path = require('path')
 const saxophonist = require('saxophonist')
