@@ -5,6 +5,9 @@ const fs = require('fs')
 // use this to parse the XML file
 const saxophonist = require('saxophonist')
 
+// use this to pipe streams
+const { pipeline } = require('stream')
+
 // count the total number of pages
 let total = 0
 
@@ -14,14 +17,11 @@ let total = 0
 // Example: node stressor wikipedia/*
 const files = process.argv.splice(2)
 
-// use pump to pipe the streams
-const pump = require('pump')
-
 console.time('parsing time')
 parse()
 
 function parse () {
-  var file = files.shift()
+  const file = files.shift()
 
   if (!file) {
     console.timeEnd('parsing time')
