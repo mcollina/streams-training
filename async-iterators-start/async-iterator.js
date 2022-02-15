@@ -46,7 +46,7 @@ async function start () {
   console.log('Reading files: ', files)
 
   fs.writeFileSync(pagesFilename, 'id,title\n')
-  
+
   // TODO
   // 1. Create the write stream for pagesFilename
   // 2. Iterate over each file and call parseAsync in *series*
