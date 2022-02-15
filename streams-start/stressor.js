@@ -1,21 +1,21 @@
 'use strict'
 
-var fs = require('fs')
+const fs = require('fs')
 
 // use this to parse the XML file
-var saxophonist = require('saxophonist')
+const saxophonist = require('saxophonist')
 
 // count the total number of pages
-var total = 0
+let total = 0
 
 // pass any numbers of files as arguments when you launch this
 // Usage: node stressor file1 file2
 // Example: node stressor wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000
 // Example: node stressor wikipedia/*
-var files = process.argv.splice(2)
+const files = process.argv.splice(2)
 
 // use pump to pipe the streams
-var pump = require('pump')
+const pump = require('pump')
 
 console.time('parsing time')
 parse()

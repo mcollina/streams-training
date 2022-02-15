@@ -17,7 +17,7 @@ The `chunkToRow` function is already there for you.
 
 Part 1:
 
-1. Create a new `Transform` stream, that's going to recieve the parsed XML chunk and return the csv row.
+1. Create a new `Transform` stream, that's going to receive the parsed XML chunk and return the csv row.
 2. Create the `fs.createWriteStream(filename)`
 3. Pipe them together using `pipeline`
 
