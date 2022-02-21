@@ -6,28 +6,6 @@ Run `npm install` in this folder
 
 ## Exercise
 
-In addition to parsing the XML, we're going to read the data and pull out the title and id from each page and write them to CSV file like so:
-
-```
-id,title
-1,hello world
-```
-
-The `chunkToRow` function is already there for you.
-
-Part 1:
-
-1. Create a new `Transform` stream, that's going to recieve the parsed XML chunk and return the csv row.
-2. Create the `fs.createWriteStream(filename)`
-3. Pipe them together using `pipeline`
-
-To test it:
-
-* `npm run pipeline:one`: it will parse one file
-* `npm run pipeline:all`: it will parse all files
-
-Part 2: Async iterators
-
 An alternative to creating a dedicated transform stream, you can instead iterate over each chunk, create the row and write it to the file directly.
 
 1. Pipe the XML file to the `saxophonist` stream as before

@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pipeline:one": "CLIMEM=8999 node -r climem pipeline wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000",
-    "pipeline:all": "CLIMEM=8999 node -r climem pipeline wikipedia/*",
     "iterator:one": "CLIMEM=8999 node -r climem async-iterator wikipedia/enwiki-20151201-pages-meta-current1.xml-p000000010p000010000",
     "iterator:all": "CLIMEM=8999 node -r climem async-iterator wikipedia/*",
     "climem": "climem 8999",

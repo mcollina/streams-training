@@ -25,7 +25,7 @@ async function parsePipeline(file) {
   // 3. Create the saxophonist parse stream
   // 4. Create a PassThrough stream for incrementing the `total` - set objectMode: true
   // 5. Create a Transform stream and use `chunkToRow`
-  // 6. Finally, pipe them all together using pipeline, returning the promise 
+  // 6. Finally, pipe them all together using pipeline, returning the promise
 }
 
 async function start () {
@@ -35,8 +35,15 @@ async function start () {
   // Creates the file, and adds the csv headers
   fs.writeFileSync(pagesFilename, 'id,title\n')
 
-  // TODO
-  // 1. iterate over each files and call parsePipeline in *series**
+  try {
+    for (const file of files) {
+      console.log('reading ', file)
+      await parsePipeline(file)
+      console.log('parsed ', file)
+    }
+  } catch (error) {
+    console.log(error)
+  }
 
   console.log('total: ', total)
   console.timeEnd('parsing time')

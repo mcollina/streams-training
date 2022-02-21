@@ -1,0 +1,24 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "big-at-once.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buffering": "CLIMEM=8999 node -r climem big-at-once.js",
+    "streamed": "CLIMEM=8999 node -r climem streamed.js",
+    "climem": "climem 8999"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.27.2",
+    "got": "11.8.3",
+    "jsonstream2": "^3.0.0",
+    "through2": "^4.0.2"
+  },
+  "devDependencies": {
+    "climem": "^1.0.3"
+  }
+}
