@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fastify": "^3.27.2",
     "got": "11.8.3",
     "jsonstream2": "^3.0.0",
     "through2": "^4.0.2"
