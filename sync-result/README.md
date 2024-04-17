@@ -15,8 +15,8 @@ The archive contains XML files from a Wikipedia dump, your task is to
 count how many pages are there.
 
 Have a look at `stressor.js`, it contains a basic implementation for
-processing throught the files, using a streaming parser
-[saxophonist](http://npm.im/saxophonist).
+processing throught the files, one at a time in a synchronous way using
+[xml2js](http://npm.im/xml2js).
 
 To test it:
 
@@ -27,21 +27,12 @@ To test it:
 ## Tracking mem
 
 All examples are setup to allow memory monitoring with
-[climem](http://npm.im/climem). Run in with `npm run climem`.
+[climem](http://npm.im/climem). Run them with `npm run climem`.
 
 ## Questions
 
-1) what is happening at the memory now? what does climem tells you?
-2) how much time does it take for `npm run two` to complete? is it
-   faster or slower than the sync approach? why?
-
-## Bonus
-
-Instead of the `parse()` recursion, use [never-ending-stream](http://npm.im/never-ending-stream) to
-concatenate the (already parsed) streams.
-
-Use [through2](http://npm.im/through2) to count the pages instead of
-`on('data', function () {})`.
-
-You can also track when a stream is finished with
-[end-of-stream](http://npm.im/end-of-stream).
+1) where you able to run `npm run all`?
+2) where you able to track memory?
+3) Why `climem` is not displaying any data?
+4) how much memory is being held by your process while it is parsing?
+5) how much time does it take for `npm run two` to complete?

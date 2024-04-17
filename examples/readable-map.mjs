@@ -3,7 +3,7 @@ import { promisify } from 'util'
 
 const sleep = promisify(setTimeout)
 
-const requestUrls = ['nearform.com', 'nodejs.org', 'google.com', 'openjsf.org']
+const requestUrls = ['platformatic.dev', 'nodejs.org', 'google.com', 'openjsf.org']
 // Using simple async iterators with readable.map
 for await (const body of Readable.from(requestUrls).map((url) => performRequest(url))) {
   console.log(body) // one request per time

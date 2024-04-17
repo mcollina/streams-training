@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { Transform } = require('stream')
+const { Transform, pipeline } = require('stream')
 
 const upper = new Transform({
   transform: function (data, enc, cb) {
@@ -8,6 +8,15 @@ const upper = new Transform({
   }
 })
 
-fs.createReadStream(__filename)
-  .pipe(upper)
-  .pipe(process.stdout)
+pipeline(
+  fs.createReadStream(__filename),
+  upper,
+  process.stdout,
+  err => {
+    if (err) {
+      console.error('Pipeline failed.', err)
+    } else {
+      console.log('Pipeline succeeded.')
+    }
+  }
+)
